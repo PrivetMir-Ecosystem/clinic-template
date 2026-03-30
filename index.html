@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Улыбка+ — стоматология в Острогожске и Воронеже</title>
+    <meta name="description" content="Стоматология Улыбка+ в Острогожске и Воронеже. Лечение без боли, прозрачные цены, опытные врачи. Запишитесь на приём онлайн.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ulybkaplus.privetmir.com.ru">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+<link rel="manifest" href="/manifest.json">
+<script>
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("/sw.js");
+}
+</script>
+</head>
+<body>
+<div class="interactive-bg"></div>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header__inner">
+        <a href="/" class="logo">
+            <span class="logo__mark">Улыбка+</span>
+            <span class="logo__badge">стоматология</span>
+        </a>
+        <nav class="nav">
+            <a href="#services" class="nav__link">Услуги</a>
+            <a href="#doctors" class="nav__link">Врачи</a>
+            <a href="#prices" class="nav__link">Цены</a>
+            <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+        <a href="#form" class="btn btn--primary btn--small">Записаться</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <span class="hero__badge">Острогожск · Воронеж · 16 лет</span>
+                <h1 class="hero__title">Стоматология,<br>которой доверяют</h1>
+                <p class="hero__description">
+                    Быстрое лечение без боли. Современные методики, прозрачные цены и врачи, которые действительно заботятся.
+                </p>
+                <div class="hero__buttons">
+                    <a href="#form" class="btn btn--primary">Записаться</a>
+                    <a href="#services" class="btn btn--secondary">Услуги</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-number" id="counter-years">0</div>
+                    <div class="counter-label">лет опыта</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="counter-patients">0</div>
+                    <div class="counter-label">клиентов ежемесячно</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="counter-price">0</div>
+                    <div class="counter-label">средняя цена за лечение</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section__tag">Что мы лечим</span>
+                <h2 class="section__title">Услуги</h2>
+                <p class="section__description">Решаем большинство проблем на месте, без стресса и боли</p>
+            </div>
+            <div class="services__grid" id="services-grid"></div>
+        </div>
+    </section>
+
+    <!-- Doctors -->
+    <section id="doctors" class="doctors">
+        <div class="container">
+            <div class="section-header">
+                <span class="section__tag">Команда</span>
+                <h2 class="section__title">Врачи</h2>
+                <p class="section__description">Опытные специалисты, которые заботятся о вашей улыбке</p>
+            </div>
+            <div class="doctors__grid" id="doctors-grid"></div>
+        </div>
+    </section>
+
+    <!-- Prices -->
+    <section id="prices" class="prices">
+        <div class="container">
+            <div class="section-header">
+                <span class="section__tag">Доступно каждому</span>
+                <h2 class="section__title">Цены</h2>
+                <p class="section__description">Одни из самых низких в городе при достойном качестве лечения</p>
+            </div>
+            <div class="prices__grid" id="prices-grid"></div>
+            <div class="prices__footnote">
+                <p>Оказываем широкий спектр услуг по доступным ценам. Отправьте заявку — мы сориентируем по стоимости лечения.</p>
+                <a href="#form" class="btn btn--primary">Узнать стоимость</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section id="form" class="form-section">
+        <div class="container">
+            <div class="form-card">
+                <h2 class="form-card__title">Запишитесь на приём</h2>
+                <p class="form-card__description">Ответим в течение 15 минут</p>
+                <form class="form" action="/api/submit" method="POST">
+                    <input type="text" name="name" placeholder="Ваше имя" required class="form__input">
+                    <input type="tel" name="phone" placeholder="Телефон *" required class="form__input">
+                    <input type="datetime-local" name="datetime" class="form__input">
+                    <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+                    <label class="form__consent">
+                        <input type="checkbox" required> Я согласен с <a href="#privacy" class="privacy-link">политикой конфиденциальности</a>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer__inner">
+        <div class="footer__info">
+            <div class="footer__logo">Улыбка+</div>
+            <div id="addresses"></div>
+            <div id="phones"></div>
+        </div>
+        <div class="footer__helpers">
+            <p class="footer__helpers-title">Бесплатные помощники</p>
+            <div class="helpers-links">
+                <a href="https://privetmir.com.ru/test" target="_blank">
+                    🦷 <strong>Зубной консьерж</strong>
+                    <span class="helper-desc">подберёт план, даст советы, найдёт акции и промокоды</span>
+                </a>
+                <a href="https://doctor.privetmir.com.ru" target="_blank">
+                    👨‍⚕️ <strong>Помощник врача</strong>
+                    <span class="helper-desc">диагностика, рекомендации, 34 протокола лечения</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer__legal">
+            <a href="#" id="privacy-link-footer" class="privacy-link">Политика конфиденциальности</a>
+            <p>© 2026 ООО «Улыбка+»</p>
+            <div id="socials" class="footer__socials"></div>
+        </div>
+    </div>
+</footer>
+
+<!-- Privacy Modal -->
+<div id="privacy-modal" class="modal">
+    <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <div id="privacy-text">
+            <h2>Политика конфиденциальности</h2>
+            <p>ООО "Улыбка+" (далее – Оператор) обязуется защищать ваши персональные данные. Сбор и обработка осуществляется в соответствии с Федеральным законом от 27.07.2006 №152-ФЗ «О персональных данных».</p>
+            <h3>Какие данные мы собираем</h3>
+            <p>Имя, телефон, e-mail, а также обезличенные данные о посещениях (cookies).</p>
+            <h3>Цели обработки</h3>
+            <p>Запись на приём, консультации, информирование об акциях и услугах.</p>
+            <h3>Ваши права</h3>
+            <p>Вы можете отозвать согласие на обработку данных, направив письмо на ulybka.online@yandex.ru.</p>
+        </div>
+    </div>
+</div>
+
+<script src="/js/data.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
