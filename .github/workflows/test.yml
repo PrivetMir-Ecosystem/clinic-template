@@ -1,0 +1,25 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate data.js
+        run: node tests/test_data.js
+      - name: Validate HTML
+        run: bash tests/test_html.sh
+      - name: Check for broken links
+        run: |
+          grep -o 'href="[^"]*"' index.html | grep -v "http" | while read link; do
+            file=$(echo $link | sed 's/href="//;s/"//')
+            if [ ! -f "$file" ] && [ ! -d "$file" ]; then
+              echo "⚠️ Warning: $file not found"
+            fi
+          done
